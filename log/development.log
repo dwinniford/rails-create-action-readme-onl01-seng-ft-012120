@@ -40,3 +40,52 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2020-03-11 20:30:37.136539"], ["updated_at", "2020-03-11 20:30:37.136539"]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/posts/new" for 127.0.0.1 at 2020-03-11 15:34:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 832ms (Views: 783.9ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-03-11 15:35:17 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ifQmJOGGE7uSxXGkF5cXHv/xo0Nq4CIb4Kg6zu+wJuRImrPxEmOKxVlU5Rh2wFxpBr456X4zs1by5xAasvhB4A==", "title"=>"Brazos Valley Cheese", "description"=>"good stuff", "commit"=>"Submit Post"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Brazos Valley Cheese"], ["description", "good stuff"], ["created_at", "2020-03-11 20:35:17.447115"], ["updated_at", "2020-03-11 20:35:17.447115"]]
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 360ms (ActiveRecord: 14.4ms)
+
+
+  [1m[36mPost Load (4.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Started GET "/posts/new" for 127.0.0.1 at 2020-03-11 15:40:56 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 609ms (Views: 566.8ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-03-11 15:41:15 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HbLJlleviZqCipX7Uo/XYolt8ohBkfMXspNW10doR6Hc3FxDpEoQ5EkbAUcz2JwVcCJoIlVCYlqg3HwDGiAgpQ==", "title"=>"Los Gallos", "description"=>"great tacos", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Los Gallos"], ["description", "great tacos"], ["created_at", "2020-03-11 20:41:15.839119"], ["updated_at", "2020-03-11 20:41:15.839119"]]
+  [1m[35m (18.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 68ms (ActiveRecord: 23.2ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2020-03-11 15:41:15 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 144ms (Views: 105.0ms | ActiveRecord: 0.3ms)
+
+
